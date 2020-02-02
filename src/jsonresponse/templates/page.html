@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="refresh" content="10">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        {% block style %}
+        {% endblock style %}
+    </head>
+
+    <body>
+    {% if data %}
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published</th>
+            <th>Link</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.author }}</td>
+            <td>{{ item.published }}</td>
+            <td><a href="{{ item.href }}">Link</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    </body>
+
+</html>
