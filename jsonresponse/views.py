@@ -1,9 +1,9 @@
-import telegram
+#import telegram
 from django.shortcuts import render
 from .nadir import getBooks
 
-bot = telegram.Bot(token='<YOUR-TOKEN>')
-chat_id = bot.get_updates()[-1].message.chat_id
+#bot = telegram.Bot(token='<YOUR-TOKEN>')
+#chat_id = bot.get_updates()[-1].message.chat_id
 book_list = []
 
 
@@ -26,7 +26,7 @@ def updatedBookList(books, data):
 
 def send_json(request):
     new_data = getBooks()
-    new_books = updatedBookList(book_list, new_data)
-    informMe(new_books)
+    #new_books = updatedBookList(book_list, new_data)
+    #informMe(new_books)
 
-    return render(request, 'page.html', {'data': data})
+    return render(request, 'page.html', {'data': new_data})

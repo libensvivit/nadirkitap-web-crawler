@@ -26,6 +26,6 @@ def getBooks():
                 books_list.append(books_dict)
 
 
-    with open('data.json', 'w', encoding='utf8') as outfile:
-        json.dump(books_list, outfile, indent=2, ensure_ascii=False)
+    # with open('data.json', 'w', encoding='utf8') as outfile:
+    #     json.dump(books_list, outfile, indent=2, ensure_ascii=False)
     return books_list
