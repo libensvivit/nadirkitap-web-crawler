@@ -2,34 +2,44 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="refresh" content="10">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}{% endblock title %}</title>
+        <title>NadirKitap - Recent Books</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        {% block style %}
-        {% endblock style %}
     </head>
+    <style>
+        table{
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        
+        th, td{
+            text-align: center;
+        }
 
+        td#title{
+            text-align: left;
+        }
+    </style>
     <body>
-    {% if data %}
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Published</th>
-            <th>Link</th>
-        </tr>
-        {% for item in data %}
-        <tr>
-            <td>{{ item.title }}</td>
-            <td>{{ item.author }}</td>
-            <td>{{ item.published }}</td>
-            <td><a href="{{ item.href }}">Link</a></td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
+        <table>
+            <tr>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>PUBLISHED</th>
+                <th>LINK</th>
+            </tr>
+            {% for item in data %}
+            <tr>
+                <td id="title">{{ item.title }}</td>
+                <td id="author">{{ item.author }}</td>
+                <td id="published">{{ item.published }}</td>
+                <td id="href"><a href="{{ item.href }}" target="_blank">Open in new tab</a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </body>
 
 </html>
