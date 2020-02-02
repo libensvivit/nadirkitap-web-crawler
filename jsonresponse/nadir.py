@@ -1,7 +1,5 @@
-import requests, json, re, smtplib
+import requests, json
 from bs4 import BeautifulSoup
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 def getBooks():
     url = 'https://www.nadirkitap.com/yeni-eklenen-kitaplar.html'
