@@ -7,5 +7,5 @@ def index(request):
     return render(request, 'index.html')
 
 def serve_data(request):
-        data = getBooks()
+        data = getBooks(pages=1)
         return HttpResponse(json.dumps(data), content_type="application/json")

@@ -1,7 +1,6 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 </head>
 <body>
     <table id="books" class="display" style="width:100%">
@@ -15,7 +14,9 @@
             </tr>
         </thead>
     </table>
+    
 </body>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
@@ -25,11 +26,11 @@
             "dataSrc": ""
         },
         "columns": [
-            {"data" : "title"},
-            {"data" : "author"},
-            {"data" : "cost"},
-            {"data" : "published"},
-            {"data" : "href"}
+                {"data" : "title"},
+                {"data" : "author"},
+                {"data" : "cost"},
+                {"data" : "published"},
+                {"data" : "href"}
             ]
         });
     } );
