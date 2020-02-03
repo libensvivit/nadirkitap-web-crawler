@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <table id="books" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>COST</th>
+                <th>PUBLISHED</th>
+                <th>LINK</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#books').DataTable({
+            "ajax": {
+            "url": "data",
+            "dataSrc": ""
+        },
+        "columns": [
+            {"data" : "title"},
+            {"data" : "author"},
+            {"data" : "cost"},
+            {"data" : "published"},
+            {"data" : "href"}
+            ]
+        });
+    } );
+</script>
+</html>
