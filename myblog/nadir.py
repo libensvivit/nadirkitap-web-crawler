@@ -14,7 +14,6 @@ def getBooks(pages=1):
         for ul in soup.find_all('ul', {'class': 'product-list'}):
             for li in ul.find_all('li'):
                 div = li.find('div', {'class': 'col-md-8'})
-                
                 if div:
                     books_dict = {}
                     title_text = div.h4.a.select_one('span').text
